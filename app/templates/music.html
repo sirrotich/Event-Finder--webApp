@@ -2,6 +2,29 @@
 
 {% block content %}
 
+
+<button><a href="{{url_for('main.post_cars')}}" >Submit Article</a></button>
+</div>
+<br>
+
+{% for music in musics  %}
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+    <div class="panel">
+    <div class="panel-body">
+        <h2 id="articletitle">{{ music.location}}</h2>
+        <p id="content">{{ music.company }}</p>
+        
+        
+  
+        <div class="text-center">
+        <a href="/review/{{music.id}}" class="btn btn-primary">Review</a>
+      </div>
+      </div>
+    </div>
+  </div>
+<br>
+
+
 <div class="row" style="background-image: url('http://cdn.eventfinda.co.nz/uploads/events/transformed/1241072-552747-7.jpg'); background-repeat: no-repeat; background-size: cover;">
     <div class="welcome" style="height: 600px;text-align: center;margin:0 auto;">                      
     </div>
