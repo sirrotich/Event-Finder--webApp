@@ -48,21 +48,21 @@
      <body>
   
     
-<button><a href="{{url_for('main.post_cars')}}" >Submit Article</a></button>
+<button><a href="{{url_for('main.post_grounds')}}" >Submit Article</a></button>
 </div>
 <br>
 
-{% for car in cars  %}
+{% for ground in grounds  %}
 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
     <div class="panel">
     <div class="panel-body">
-        <h2 id="articletitle">{{ car.location}}</h2>
-        <p id="content">{{ car.company }}</p>
+        <h2 id="articletitle">{{ ground.location}}</h2>
+        <p id="content">{{ ground.company }}</p>
         
         
   
         <div class="text-center">
-        <a href="/review/{{car.id}}" class="btn btn-primary">Review</a>
+        <a href="/review/{{ground.id}}" class="btn btn-primary">Review</a>
       </div>
       </div>
     </div>
