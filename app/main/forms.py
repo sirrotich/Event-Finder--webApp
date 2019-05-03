@@ -2,17 +2,16 @@ from flask_wtf import FlaskForm
 from wtforms import StringField,TextAreaField,SubmitField
 from wtforms.validators import Required
 
-class UpdateProfile(FlaskForm):
-    bio = TextAreaField('Tell us about yourself.',validators = [Required()])
-    submit = SubmitField('Submit')
-
-class ServiceForm(FlaskForm):
-    title = StringField('Blog Title')
-    topic = StringField('Topic')
-    content = TextAreaField('Blog Content')
-    submit = SubmitField('Submit')
-
 class ReviewForm(FlaskForm):
+    review = TextAreaField('Service Review',validators=[Required()])
+    submit = SubmitField('submit')
 
-    comment = TextAreaField('Comment')
-    submit = SubmitField('Post Comments')
+class UpdateProfile(FlaskForm):
+    bio = TextAreaField('Tell us about you.',validators = [Required()])
+    submit = SubmitField('Submit')
+
+class ProviderForm(FlaskForm):
+    location = StringField("Where are you located?", validators = [Required()])
+    company = StringField("Company name?")
+    service = TextAreaField('What do you provide?')
+    submit = SubmitField('Submit')
