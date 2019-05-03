@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+
+
+{%block content %}
+<div class="container">
+    <div class="row">
+        <div class= "col-md-2"> </div>
+        <div class="col-md-8">
+        <!--Flash message -->
+        {% for message in get_flashed_messages() %}
+          <div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          {{ message }}
+          </div>
+        {% endfor %}
+        <!-- Login form -->
+        <form method="POST" class="text-center"  >
+
+            {{login_form.hidden_tag()}}
+    
+            
+            <div class="form-group ">
+                {{ login_form.email.label(class="") }} {{ login_form.email(class="form-control") }}
+            </div>
+            <br>
+          
+            <div class="form-group">
+                {{ login_form.password.label }} {{ login_form.password(class="form-control") }}
+            </div>
+            
+
+            
+        {{ login_form.remember}}Remember me
+        <br>
+        {{ login_form.submit(class="btn btn-primary btn-lg") }}
+    </form>
+        <p> Don't have an account? <a href="{{url_for('auth.register')}}">Sign up here</a></p>
+        <small><a href="{{url_for('auth.reset_request')}}">Forget password?</a></small>
+       </div>
+       <div clas="col-md-2"> </div>
+      </div>
+</div>
+{% endblock%}
