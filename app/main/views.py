@@ -124,10 +124,10 @@ def tents():
 @main.route('/catering', methods=['GET','POST'])
 def Catering(category = "Catering"):
 
-   catering = Catering.query.all()
+   
 
    title = "Catering"
-   return render_template('catering.html', catering= catering, title=title)
+   return render_template('catering.html',  title=title)
 
 @main.route('/photography', methods=['GET','POST'])
 def photography(category = "Photography"):
